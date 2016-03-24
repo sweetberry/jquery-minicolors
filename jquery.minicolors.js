@@ -289,6 +289,10 @@
             .stop(true, true)
             .fadeIn(settings.showSpeed, function() {
                 if( settings.show ) settings.show.call(input.get(0));
+
+                //panel表示前だとgridのサイズが取得できず、pickerの位置が設定できませんでした。
+                //panel表示後に改めてupdateをよんでいます、
+                updateFromInput(input, true);
             });
 
     }
